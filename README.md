@@ -33,11 +33,11 @@ From this directory, with Python installed:
 python -m http.server 8080 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8080/` in a browser. Press **Ctrl+C** in the server terminal when finished. Core policy text, navigation, and contact information are available without JavaScript. JavaScript only enables the copy-email icon in a secure context when the clipboard API is available; the email link and selectable text remain usable otherwise.
+Open `http://127.0.0.1:8080/` in a browser. Press **Ctrl+C** in the server terminal when finished. Core policy text, navigation, and contact information are available without JavaScript. JavaScript enables the same copy-email button on desktop and mobile, with a brief tick after successful copying. It uses the secure Clipboard API when available and a browser copy-command fallback for local previews. The email link and selectable text remain usable if copying is blocked or JavaScript is disabled.
 
 ## 📝 Update the policy
 
-Edit the readable text directly in `index.html`; styling is in `styles.css`. Update both the visible revision date and the `datetime` value when making a policy revision. Then commit and push: branch-based Pages publishing deploys updates independently of an app release.
+Edit the readable text directly in `index.html`; styling is in `styles.css`. After changing `script.js`, change its `?v=` cache-version value in the HTML so returning visitors load the updated script. Update both the visible revision date and the `datetime` value when making a policy revision. Then commit and push: branch-based Pages publishing deploys updates independently of an app release.
 
 Keep factual disclosures aligned with the app and Play Console's Data safety answers. The in-app policy is bundled with the app and needs an app update to change. A web edit does not change the app's behavior or its bundled text. The website-specific hosting section should remain separate from app-only statements about offline use and local data.
 
